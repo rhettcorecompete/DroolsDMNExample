@@ -20,7 +20,7 @@ package org.kie.kogito.app;
 public class DecisionModels extends org.kie.kogito.dmn.AbstractDecisionModels {
 
     static {
-        init(org.kie.kogito.pmml.AbstractPredictionModels.kieRuntimeFactoryFunction, null, null, readResource(Application.class.getResourceAsStream("/TrafficViolation.dmn")));
+        init(org.kie.kogito.pmml.AbstractPredictionModels.kieRuntimeFactoryFunction, null, null, readResource(Application.class.getResourceAsStream("/Flight-rebooking.dmn")), readResource(Application.class.getResourceAsStream("/nexttest.dmn")), readResource(Application.class.getResourceAsStream("/TrafficViolation.dmn")));
     }
 
     public DecisionModels(org.kie.kogito.Application app) {
