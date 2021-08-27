@@ -1,0 +1,78 @@
+<dmn:definitions xmlns:dmn="http://www.omg.org/spec/DMN/20180521/MODEL/" xmlns="https://kiegroup.org/dmn/_603009B3-CE03-48E6-89BF-2C6E9D8B9553" xmlns:feel="http://www.omg.org/spec/DMN/20180521/FEEL/" xmlns:kie="http://www.drools.org/kie/dmn/1.2" xmlns:dmndi="http://www.omg.org/spec/DMN/20180521/DMNDI/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="_80A55BC6-BE6B-4FDF-B41B-A9B8646BA6B1" name="Relation" typeLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" namespace="https://kiegroup.org/dmn/_603009B3-CE03-48E6-89BF-2C6E9D8B9553">
+  <dmn:extensionElements/>
+  <dmn:itemDefinition id="_D23845F0-60A5-4BF1-B17B-769083612A52" name="tEmployee" isCollection="false">
+    <dmn:itemComponent id="_A4494360-458E-4C58-BE65-0FF26F6E4257" name="Name" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_F2FC3893-8444-48DF-9218-D6BFF4FEDAFE" name="Product" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+  </dmn:itemDefinition>
+  <dmn:itemDefinition id="_106FA830-4B02-4B18-BE78-0E93E84E4A0F" name="tEmployees" isCollection="true">
+    <dmn:typeRef>tEmployee</dmn:typeRef>
+  </dmn:itemDefinition>
+  <dmn:itemDefinition id="_3E906AD1-6381-4BF9-A318-31DDA66C4709" name="tAssignedEmployee" isCollection="false">
+    <dmn:itemComponent id="_FC25AA9A-D494-4612-AC6D-18CB9D777ADB" name="Name" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_A130F0CD-8081-4992-8A62-B512FDDEF32B" name="Product" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_700BB348-6058-44AB-B833-A258C0FD2B93" name="Distro" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+  </dmn:itemDefinition>
+  <dmn:itemDefinition id="_C51351B3-FFA9-43ED-BB54-DEC3ACC7427A" name="tAssignedEmployees" isCollection="true">
+    <dmn:typeRef>tAssignedEmployee</dmn:typeRef>
+  </dmn:itemDefinition>
+  <dmn:decision id="_3F4A2CDF-30A6-4AF7-8042-D72A7BE2D404" name="Employee_Tech_Mapping">
+    <dmn:extensionElements/>
+    <dmn:variable id="_2CFA38BD-812C-4488-8250-116FA20C806F" name="Employee_Tech_Mapping" typeRef="tEmployees"/>
+    <dmn:relation id="_DACC8F50-F7B5-4436-AE51-E5A1E729BC76">
+      <dmn:column id="_97E7FD5F-E57E-421A-9F30-DA04042BABF5" name="Name" typeRef="string"/>
+      <dmn:column id="_6DEEF8B0-E3C7-4EEE-A89C-1F4E893489B1" name="Product" typeRef="string"/>
+      <dmn:row id="_A65989E5-3081-446F-8CA5-F9B139F9B7A6">
+        <dmn:literalExpression id="_03635F0F-C228-4949-8C68-0B8D8208E18A">
+          <dmn:text>"Mike"</dmn:text>
+        </dmn:literalExpression>
+        <dmn:literalExpression id="_F61F58F8-2D97-4F0A-BD22-FDC64CE05C83">
+          <dmn:text>"Drools"</dmn:text>
+        </dmn:literalExpression>
+      </dmn:row>
+      <dmn:row id="_D2ACAE4F-265F-42C4-AA3B-B575093247F0">
+        <dmn:literalExpression id="_673CEB5A-7C63-47E4-B665-4CCAD6128E29">
+          <dmn:text>"Joey"</dmn:text>
+        </dmn:literalExpression>
+        <dmn:literalExpression id="_8E69C8EE-0FBB-49EE-9B97-DE971B3A8A3B">
+          <dmn:text>"Camunda"</dmn:text>
+        </dmn:literalExpression>
+      </dmn:row>
+    </dmn:relation>
+  </dmn:decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram id="_CAD3FE33-5CAA-46BA-AA22-E62718F87ECE" name="DRG">
+      <di:extension>
+        <kie:ComponentsWidthsExtension>
+          <kie:ComponentWidths dmnElementRef="_DACC8F50-F7B5-4436-AE51-E5A1E729BC76">
+            <kie:width>50</kie:width>
+            <kie:width>100</kie:width>
+            <kie:width>100</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_03635F0F-C228-4949-8C68-0B8D8208E18A"/>
+          <kie:ComponentWidths dmnElementRef="_F61F58F8-2D97-4F0A-BD22-FDC64CE05C83"/>
+          <kie:ComponentWidths dmnElementRef="_673CEB5A-7C63-47E4-B665-4CCAD6128E29"/>
+          <kie:ComponentWidths dmnElementRef="_8E69C8EE-0FBB-49EE-9B97-DE971B3A8A3B"/>
+        </kie:ComponentsWidthsExtension>
+      </di:extension>
+      <dmndi:DMNShape id="dmnshape-drg-_3F4A2CDF-30A6-4AF7-8042-D72A7BE2D404" dmnElementRef="_3F4A2CDF-30A6-4AF7-8042-D72A7BE2D404" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="298" y="336" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</dmn:definitions>
