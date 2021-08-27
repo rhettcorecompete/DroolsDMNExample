@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package https_58_47_47github_46com_47kiegroup_47drools_47kie_45dmn_47__A4BCA8B8_45CF08_45433F_4593B2_45A2598F19ECFF;
+package https_58_47_47www_46drools_46org_47kie_45dmn_47Passenger_45Reorder;
 
 import javax.servlet.http.HttpServletResponse;
 import java.util.stream.Collectors;
@@ -35,8 +35,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
 @RestController
-@RequestMapping("/TrafficViolation")
-public class TrafficViolationResource {
+@RequestMapping("/0019-Passenger-Reorder")
+public class __0019_45Passenger_45ReorderResource {
 
     @org.springframework.beans.factory.annotation.Autowired()
     Application application;
@@ -48,19 +48,19 @@ public class TrafficViolationResource {
     private static final com.fasterxml.jackson.databind.ObjectMapper objectMapper = new com.fasterxml.jackson.databind.ObjectMapper().registerModule(new com.fasterxml.jackson.datatype.jsr310.JavaTimeModule()).registerModule(new com.fasterxml.jackson.databind.module.SimpleModule().addSerializer(org.kie.dmn.feel.lang.types.impl.ComparablePeriod.class, new org.kie.kogito.dmn.rest.DMNFEELComparablePeriodSerializer())).disable(com.fasterxml.jackson.databind.SerializationFeature.WRITE_DATES_AS_TIMESTAMPS).disable(com.fasterxml.jackson.databind.SerializationFeature.WRITE_DURATIONS_AS_TIMESTAMPS);
 
     @PostMapping(value = "", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
-    @io.swagger.v3.oas.annotations.parameters.RequestBody(content = @io.swagger.v3.oas.annotations.media.Content(mediaType = "application/json", schema = @io.swagger.v3.oas.annotations.media.Schema(ref = "/dmnDefinitions.json#/definitions/ns4InputSet4")), description = "DMN input")
-    @io.swagger.v3.oas.annotations.responses.ApiResponse(content = @io.swagger.v3.oas.annotations.media.Content(mediaType = "application/json", schema = @io.swagger.v3.oas.annotations.media.Schema(ref = "/dmnDefinitions.json#/definitions/ns4OutputSet4")), description = "DMN output")
+    @io.swagger.v3.oas.annotations.parameters.RequestBody(content = @io.swagger.v3.oas.annotations.media.Content(mediaType = "application/json", schema = @io.swagger.v3.oas.annotations.media.Schema(ref = "/dmnDefinitions.json#/definitions/ns2InputSet2")), description = "DMN input")
+    @io.swagger.v3.oas.annotations.responses.ApiResponse(content = @io.swagger.v3.oas.annotations.media.Content(mediaType = "application/json", schema = @io.swagger.v3.oas.annotations.media.Schema(ref = "/dmnDefinitions.json#/definitions/ns2OutputSet2")), description = "DMN output")
     public ResponseEntity<?> dmn(@RequestBody(required = false) java.util.Map<String, Object> variables, HttpServletResponse httpResponse) {
-        org.kie.kogito.decision.DecisionModel decision = application.get(org.kie.kogito.decision.DecisionModels.class).getDecisionModel("https://github.com/kiegroup/drools/kie-dmn/_A4BCA8B8-CF08-433F-93B2-A2598F19ECFF", "TrafficViolation");
+        org.kie.kogito.decision.DecisionModel decision = application.get(org.kie.kogito.decision.DecisionModels.class).getDecisionModel("https://www.drools.org/kie-dmn/Passenger-Reorder", "0019-Passenger-Reorder");
         org.kie.dmn.api.core.DMNResult decisionResult = decision.evaluateAll(DMNJSONUtils.ctx(decision, variables));
         enrichResponseHeaders(decisionResult, httpResponse);
-        KogitoDMNResult result = new KogitoDMNResult("https://github.com/kiegroup/drools/kie-dmn/_A4BCA8B8-CF08-433F-93B2-A2598F19ECFF", "TrafficViolation", decisionResult);
+        KogitoDMNResult result = new KogitoDMNResult("https://www.drools.org/kie-dmn/Passenger-Reorder", "0019-Passenger-Reorder", decisionResult);
         return extractContextIfSucceded(result);
     }
 
     @GetMapping(produces = MediaType.APPLICATION_XML_VALUE)
     public String dmn() throws java.io.IOException {
-        return new String(org.drools.core.util.IoUtils.readBytesFromInputStream(this.getClass().getResourceAsStream(org.kie.dmn.feel.codegen.feel11.CodegenStringUtil.escapeIdentifier("TrafficViolation") + ".dmn_nologic")));
+        return new String(org.drools.core.util.IoUtils.readBytesFromInputStream(this.getClass().getResourceAsStream(org.kie.dmn.feel.codegen.feel11.CodegenStringUtil.escapeIdentifier("0019-Passenger-Reorder") + ".dmn_nologic")));
     }
 
     private ResponseEntity buildFailedEvaluationResponse(KogitoDMNResult result) {
@@ -108,12 +108,12 @@ public class TrafficViolationResource {
     }
 
     @PostMapping(value = "dmnresult", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
-    @io.swagger.v3.oas.annotations.parameters.RequestBody(content = @io.swagger.v3.oas.annotations.media.Content(mediaType = "application/json", schema = @io.swagger.v3.oas.annotations.media.Schema(ref = "/dmnDefinitions.json#/definitions/ns4InputSet4")), description = "DMN input")
+    @io.swagger.v3.oas.annotations.parameters.RequestBody(content = @io.swagger.v3.oas.annotations.media.Content(mediaType = "application/json", schema = @io.swagger.v3.oas.annotations.media.Schema(ref = "/dmnDefinitions.json#/definitions/ns2InputSet2")), description = "DMN input")
     public ResponseEntity<?> dmn_dmnresult(@RequestBody(required = false) java.util.Map<String, Object> variables, HttpServletResponse httpResponse) {
-        org.kie.kogito.decision.DecisionModel decision = application.get(org.kie.kogito.decision.DecisionModels.class).getDecisionModel("https://github.com/kiegroup/drools/kie-dmn/_A4BCA8B8-CF08-433F-93B2-A2598F19ECFF", "TrafficViolation");
+        org.kie.kogito.decision.DecisionModel decision = application.get(org.kie.kogito.decision.DecisionModels.class).getDecisionModel("https://www.drools.org/kie-dmn/Passenger-Reorder", "0019-Passenger-Reorder");
         org.kie.dmn.api.core.DMNResult decisionResult = decision.evaluateAll(DMNJSONUtils.ctx(decision, variables));
         enrichResponseHeaders(decisionResult, httpResponse);
-        KogitoDMNResult result = new KogitoDMNResult("https://github.com/kiegroup/drools/kie-dmn/_A4BCA8B8-CF08-433F-93B2-A2598F19ECFF", "TrafficViolation", decisionResult);
+        KogitoDMNResult result = new KogitoDMNResult("https://www.drools.org/kie-dmn/Passenger-Reorder", "0019-Passenger-Reorder", decisionResult);
         return buildDMNResultResponse(result);
     }
 }

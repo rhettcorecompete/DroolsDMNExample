@@ -1,0 +1,53 @@
+<?xml version="1.0" ?>
+<dmn:definitions xmlns:dmn="http://www.omg.org/spec/DMN/20180521/MODEL/" xmlns="https://kiegroup.org/dmn/_332018A7-812C-4294-A81F-E0D72B159604" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:kie="http://www.drools.org/kie/dmn/1.2" xmlns:feel="http://www.omg.org/spec/DMN/20180521/FEEL/" xmlns:dmndi="http://www.omg.org/spec/DMN/20180521/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="_FB258AC4-81CC-4762-983D-726EEC729AC4" name="Claim-Ip" expressionLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" typeLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" namespace="https://kiegroup.org/dmn/_332018A7-812C-4294-A81F-E0D72B159604">
+  <dmn:extensionElements></dmn:extensionElements>
+  <dmn:itemDefinition id="_128439F4-2806-4484-BB32-B75B91E3D98F" name="Fraud Claim" isCollection="false">
+    <dmn:itemComponent id="_790D5064-C9E9-4630-A124-040C3E68F3E2" name="id" isCollection="false">
+      <dmn:typeRef>number</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_47A2888F-6226-4DED-8665-41A7182C2D45" name="custId" isCollection="false">
+      <dmn:typeRef>number</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_B1AE110E-9763-42E2-8957-FA67B1B0316D" name="merchantName" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+  </dmn:itemDefinition>
+  <dmn:inputData id="_BE4B456D-C488-4A32-BA09-23A41BEEDF9B" name="Claim">
+    <dmn:extensionElements></dmn:extensionElements>
+    <dmn:variable id="_483C3F5F-733C-4974-BC4D-6AAF14B57D5A" name="Claim" typeRef="Fraud Claim"></dmn:variable>
+  </dmn:inputData>
+  <dmn:decision id="_DC860126-67B3-47B4-BDD1-E0C9B1DB9913" name="VendorConfirm">
+    <dmn:extensionElements></dmn:extensionElements>
+    <dmn:variable id="_CBBCA198-BA1D-48E3-B941-6243CB8506BD" name="VendorConfirm" typeRef="string"></dmn:variable>
+    <dmn:informationRequirement id="_61AFFD63-ABC1-4408-88C3-B3B7629192C7">
+      <dmn:requiredInput href="#_BE4B456D-C488-4A32-BA09-23A41BEEDF9B"></dmn:requiredInput>
+    </dmn:informationRequirement>
+  </dmn:decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram id="_AA7B7406-F94B-4C3E-BD4A-5A825D2C21A1" name="DRG">
+      <di:extension></di:extension>
+      <dmndi:DMNShape id="dmnshape-drg-_BE4B456D-C488-4A32-BA09-23A41BEEDF9B" dmnElementRef="_BE4B456D-C488-4A32-BA09-23A41BEEDF9B" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"></dmndi:FillColor>
+          <dmndi:StrokeColor red="0" green="0" blue="0"></dmndi:StrokeColor>
+          <dmndi:FontColor red="0" green="0" blue="0"></dmndi:FontColor>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="198" y="274" width="88" height="50"></dc:Bounds>
+        <dmndi:DMNLabel></dmndi:DMNLabel>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-drg-_DC860126-67B3-47B4-BDD1-E0C9B1DB9913" dmnElementRef="_DC860126-67B3-47B4-BDD1-E0C9B1DB9913" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"></dmndi:FillColor>
+          <dmndi:StrokeColor red="0" green="0" blue="0"></dmndi:StrokeColor>
+          <dmndi:FontColor red="0" green="0" blue="0"></dmndi:FontColor>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="224" y="149" width="149" height="66"></dc:Bounds>
+        <dmndi:DMNLabel></dmndi:DMNLabel>
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="dmnedge-drg-_61AFFD63-ABC1-4408-88C3-B3B7629192C7" dmnElementRef="_61AFFD63-ABC1-4408-88C3-B3B7629192C7">
+        <di:waypoint x="242" y="299"></di:waypoint>
+        <di:waypoint x="298.5" y="215"></di:waypoint>
+      </dmndi:DMNEdge>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</dmn:definitions>

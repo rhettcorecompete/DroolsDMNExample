@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package https_58_47_47kiegroup_46org_47dmn_47__A06ED256_45532D_454816_45A090_450A17811B9494;
+package https_58_47_47kiegroup_46org_47dmn_47__332018A7_45812C_454294_45A81F_45E0D72B159604;
 
 import javax.servlet.http.HttpServletResponse;
 import java.util.stream.Collectors;
@@ -35,8 +35,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
 @RestController
-@RequestMapping("/nexttest")
-public class NexttestResource {
+@RequestMapping("/Claim-Ip")
+public class Claim_45IpResource {
 
     @org.springframework.beans.factory.annotation.Autowired()
     Application application;
@@ -48,19 +48,19 @@ public class NexttestResource {
     private static final com.fasterxml.jackson.databind.ObjectMapper objectMapper = new com.fasterxml.jackson.databind.ObjectMapper().registerModule(new com.fasterxml.jackson.datatype.jsr310.JavaTimeModule()).registerModule(new com.fasterxml.jackson.databind.module.SimpleModule().addSerializer(org.kie.dmn.feel.lang.types.impl.ComparablePeriod.class, new org.kie.kogito.dmn.rest.DMNFEELComparablePeriodSerializer())).disable(com.fasterxml.jackson.databind.SerializationFeature.WRITE_DATES_AS_TIMESTAMPS).disable(com.fasterxml.jackson.databind.SerializationFeature.WRITE_DURATIONS_AS_TIMESTAMPS);
 
     @PostMapping(value = "", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
-    @io.swagger.v3.oas.annotations.parameters.RequestBody(content = @io.swagger.v3.oas.annotations.media.Content(mediaType = "application/json", schema = @io.swagger.v3.oas.annotations.media.Schema(ref = "/dmnDefinitions.json#/definitions/InputSet2")), description = "DMN input")
-    @io.swagger.v3.oas.annotations.responses.ApiResponse(content = @io.swagger.v3.oas.annotations.media.Content(mediaType = "application/json", schema = @io.swagger.v3.oas.annotations.media.Schema(ref = "/dmnDefinitions.json#/definitions/OutputSet2")), description = "DMN output")
+    @io.swagger.v3.oas.annotations.parameters.RequestBody(content = @io.swagger.v3.oas.annotations.media.Content(mediaType = "application/json", schema = @io.swagger.v3.oas.annotations.media.Schema(ref = "/dmnDefinitions.json#/definitions/ns1InputSet1")), description = "DMN input")
+    @io.swagger.v3.oas.annotations.responses.ApiResponse(content = @io.swagger.v3.oas.annotations.media.Content(mediaType = "application/json", schema = @io.swagger.v3.oas.annotations.media.Schema(ref = "/dmnDefinitions.json#/definitions/ns1OutputSet1")), description = "DMN output")
     public ResponseEntity<?> dmn(@RequestBody(required = false) java.util.Map<String, Object> variables, HttpServletResponse httpResponse) {
-        org.kie.kogito.decision.DecisionModel decision = application.get(org.kie.kogito.decision.DecisionModels.class).getDecisionModel("https://kiegroup.org/dmn/_A06ED256-532D-4816-A090-0A17811B9494", "nexttest");
+        org.kie.kogito.decision.DecisionModel decision = application.get(org.kie.kogito.decision.DecisionModels.class).getDecisionModel("https://kiegroup.org/dmn/_332018A7-812C-4294-A81F-E0D72B159604", "Claim-Ip");
         org.kie.dmn.api.core.DMNResult decisionResult = decision.evaluateAll(DMNJSONUtils.ctx(decision, variables));
         enrichResponseHeaders(decisionResult, httpResponse);
-        KogitoDMNResult result = new KogitoDMNResult("https://kiegroup.org/dmn/_A06ED256-532D-4816-A090-0A17811B9494", "nexttest", decisionResult);
+        KogitoDMNResult result = new KogitoDMNResult("https://kiegroup.org/dmn/_332018A7-812C-4294-A81F-E0D72B159604", "Claim-Ip", decisionResult);
         return extractContextIfSucceded(result);
     }
 
     @GetMapping(produces = MediaType.APPLICATION_XML_VALUE)
     public String dmn() throws java.io.IOException {
-        return new String(org.drools.core.util.IoUtils.readBytesFromInputStream(this.getClass().getResourceAsStream(org.kie.dmn.feel.codegen.feel11.CodegenStringUtil.escapeIdentifier("nexttest") + ".dmn_nologic")));
+        return new String(org.drools.core.util.IoUtils.readBytesFromInputStream(this.getClass().getResourceAsStream(org.kie.dmn.feel.codegen.feel11.CodegenStringUtil.escapeIdentifier("Claim-Ip") + ".dmn_nologic")));
     }
 
     private ResponseEntity buildFailedEvaluationResponse(KogitoDMNResult result) {
@@ -108,12 +108,12 @@ public class NexttestResource {
     }
 
     @PostMapping(value = "dmnresult", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
-    @io.swagger.v3.oas.annotations.parameters.RequestBody(content = @io.swagger.v3.oas.annotations.media.Content(mediaType = "application/json", schema = @io.swagger.v3.oas.annotations.media.Schema(ref = "/dmnDefinitions.json#/definitions/InputSet2")), description = "DMN input")
+    @io.swagger.v3.oas.annotations.parameters.RequestBody(content = @io.swagger.v3.oas.annotations.media.Content(mediaType = "application/json", schema = @io.swagger.v3.oas.annotations.media.Schema(ref = "/dmnDefinitions.json#/definitions/ns1InputSet1")), description = "DMN input")
     public ResponseEntity<?> dmn_dmnresult(@RequestBody(required = false) java.util.Map<String, Object> variables, HttpServletResponse httpResponse) {
-        org.kie.kogito.decision.DecisionModel decision = application.get(org.kie.kogito.decision.DecisionModels.class).getDecisionModel("https://kiegroup.org/dmn/_A06ED256-532D-4816-A090-0A17811B9494", "nexttest");
+        org.kie.kogito.decision.DecisionModel decision = application.get(org.kie.kogito.decision.DecisionModels.class).getDecisionModel("https://kiegroup.org/dmn/_332018A7-812C-4294-A81F-E0D72B159604", "Claim-Ip");
         org.kie.dmn.api.core.DMNResult decisionResult = decision.evaluateAll(DMNJSONUtils.ctx(decision, variables));
         enrichResponseHeaders(decisionResult, httpResponse);
-        KogitoDMNResult result = new KogitoDMNResult("https://kiegroup.org/dmn/_A06ED256-532D-4816-A090-0A17811B9494", "nexttest", decisionResult);
+        KogitoDMNResult result = new KogitoDMNResult("https://kiegroup.org/dmn/_332018A7-812C-4294-A81F-E0D72B159604", "Claim-Ip", decisionResult);
         return buildDMNResultResponse(result);
     }
 }
